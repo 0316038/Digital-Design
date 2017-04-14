@@ -1,0 +1,5 @@
+MO sd_card NULL sd_card.v vlg1C/sd__card.bin 1448268385
+MO lab7 NULL lab7.v vlg56/lab7.bin 1448268385
+MO clk_divider NULL clk_divider.v vlg70/clk__divider.bin 1448268385
+MO debounce NULL debounce.v vlg1D/debounce.bin 1448268385
+MO uart NULL uart.v vlg48/uart.bin 1448268385

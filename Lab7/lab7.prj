@@ -1,0 +1,5 @@
+verilog work "uart.v"
+verilog work "sd_card.v"
+verilog work "debounce.v"
+verilog work "clk_divider.v"
+verilog work "lab7.v"

@@ -1,0 +1,442 @@
+--------------------------------------------------------------------------------
+Release 14.7 Trace  (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\trce.exe -intstyle ise -v 3 -s 4
+-n 3 -fastpaths -xml lab7.twx lab7.ncd -o lab7.twr lab7.pcf -ucf lab7.ucf
+
+Design file:              lab7.ncd
+Physical constraint file: lab7.pcf
+Device,package,speed:     xc3s500e,fg320,-4 (PRODUCTION 1.27 2013-10-13)
+Report level:             verbose report
+
+Environment Variable      Effect 
+--------------------      ------ 
+NONE                      No environment variables were set
+--------------------------------------------------------------------------------
+
+INFO:Timing:3412 - To improve timing, see the Timing Closure User Guide (UG612).
+INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths 
+   option. All paths that are not constrained will be reported in the 
+   unconstrained paths section(s) of the report.
+INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on 
+   a 50 Ohm transmission line loading model.  For the details of this model, 
+   and for more information on accounting for different loading conditions, 
+   please see the device datasheet.
+INFO:Timing:3390 - This architecture does not support a default System Jitter 
+   value, please add SYSTEM_JITTER constraint to the UCF to modify the Clock 
+   Uncertainty calculation.
+INFO:Timing:3389 - This architecture does not support 'Discrete Jitter' and 
+   'Phase Error' calculations, these terms will be zero in the Clock 
+   Uncertainty calculation.  Please make appropriate modification to 
+   SYSTEM_JITTER to account for the unsupported Discrete Jitter and Phase 
+   Error.
+
+================================================================================
+Timing constraint: TS_clk = PERIOD TIMEGRP "clk" 20 ns HIGH 40%;
+For more information, see Period Analysis in the Timing Closure User Guide (UG612).
+
+ 186618 paths analyzed, 9368 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected. (0 setup errors, 0 hold errors, 0 component switching limit errors)
+ Minimum period is  16.885ns.
+--------------------------------------------------------------------------------
+
+Paths for end point sd_card0/block_address_reg_26 (SLICE_X48Y89.BY), 1 path
+--------------------------------------------------------------------------------
+Slack (setup path):     3.115ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               rd_addr_26 (FF)
+  Destination:          sd_card0/block_address_reg_26 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      16.885ns (Levels of Logic = 0)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_IBUF rising at 0.000ns
+  Destination Clock:    clk_sel rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: rd_addr_26 to sd_card0/block_address_reg_26
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X46Y89.YQ      Tcko                  0.652   rd_addr<27>
+                                                       rd_addr_26
+    SLICE_X48Y89.BY      net (fanout=3)       15.851   rd_addr<26>
+    SLICE_X48Y89.CLK     Tdick                 0.382   sd_card0/block_address_reg<27>
+                                                       sd_card0/block_address_reg_26
+    -------------------------------------------------  ---------------------------
+    Total                                     16.885ns (1.034ns logic, 15.851ns route)
+                                                       (6.1% logic, 93.9% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point sram_264_7 (SLICE_X19Y23.CE), 37 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     3.472ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               Q_FSM_FFd1 (FF)
+  Destination:          sram_264_7 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      16.487ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.041ns (0.078 - 0.119)
+  Source Clock:         clk_IBUF rising at 0.000ns
+  Destination Clock:    clk_IBUF rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: Q_FSM_FFd1 to sram_264_7
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X39Y42.XQ      Tcko                  0.591   Q_FSM_FFd1
+                                                       Q_FSM_FFd1
+    SLICE_X36Y49.G3      net (fanout=17)       1.564   Q_FSM_FFd1
+    SLICE_X36Y49.Y       Tilo                  0.759   N4
+                                                       sram_addr<2>1
+    SLICE_X34Y39.F3      net (fanout=516)      2.335   sram_addr<2>
+    SLICE_X34Y39.X       Tilo                  0.759   N6
+                                                       sram_104_and000011
+    SLICE_X18Y10.G2      net (fanout=8)        1.749   N6
+    SLICE_X18Y10.Y       Tilo                  0.759   sram_456_and0000
+                                                       sram_264_and000011
+    SLICE_X37Y45.F3      net (fanout=16)       3.444   N56
+    SLICE_X37Y45.X       Tilo                  0.704   sram_264_and0000
+                                                       sram_264_and00002
+    SLICE_X19Y23.CE      net (fanout=4)        3.268   sram_264_and0000
+    SLICE_X19Y23.CLK     Tceck                 0.555   sram_264_7
+                                                       sram_264_7
+    -------------------------------------------------  ---------------------------
+    Total                                     16.487ns (4.127ns logic, 12.360ns route)
+                                                       (25.0% logic, 75.0% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     3.849ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               Q_FSM_FFd1 (FF)
+  Destination:          sram_264_7 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      16.110ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.041ns (0.078 - 0.119)
+  Source Clock:         clk_IBUF rising at 0.000ns
+  Destination Clock:    clk_IBUF rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: Q_FSM_FFd1 to sram_264_7
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X39Y42.XQ      Tcko                  0.591   Q_FSM_FFd1
+                                                       Q_FSM_FFd1
+    SLICE_X34Y48.F2      net (fanout=17)       1.301   Q_FSM_FFd1
+    SLICE_X34Y48.X       Tilo                  0.759   Q_FSM_FFd2
+                                                       sram_addr<5>1
+    SLICE_X18Y10.G3      net (fanout=96)       4.729   sram_addr<5>
+    SLICE_X18Y10.Y       Tilo                  0.759   sram_456_and0000
+                                                       sram_264_and000011
+    SLICE_X37Y45.F3      net (fanout=16)       3.444   N56
+    SLICE_X37Y45.X       Tilo                  0.704   sram_264_and0000
+                                                       sram_264_and00002
+    SLICE_X19Y23.CE      net (fanout=4)        3.268   sram_264_and0000
+    SLICE_X19Y23.CLK     Tceck                 0.555   sram_264_7
+                                                       sram_264_7
+    -------------------------------------------------  ---------------------------
+    Total                                     16.110ns (3.368ns logic, 12.742ns route)
+                                                       (20.9% logic, 79.1% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     4.152ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               sd_counter_2 (FF)
+  Destination:          sram_264_7 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      15.807ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.041ns (0.078 - 0.119)
+  Source Clock:         clk_IBUF rising at 0.000ns
+  Destination Clock:    clk_IBUF rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: sd_counter_2 to sram_264_7
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X39Y48.XQ      Tcko                  0.591   sd_counter<2>
+                                                       sd_counter_2
+    SLICE_X36Y49.G1      net (fanout=3)        0.884   sd_counter<2>
+    SLICE_X36Y49.Y       Tilo                  0.759   N4
+                                                       sram_addr<2>1
+    SLICE_X34Y39.F3      net (fanout=516)      2.335   sram_addr<2>
+    SLICE_X34Y39.X       Tilo                  0.759   N6
+                                                       sram_104_and000011
+    SLICE_X18Y10.G2      net (fanout=8)        1.749   N6
+    SLICE_X18Y10.Y       Tilo                  0.759   sram_456_and0000
+                                                       sram_264_and000011
+    SLICE_X37Y45.F3      net (fanout=16)       3.444   N56
+    SLICE_X37Y45.X       Tilo                  0.704   sram_264_and0000
+                                                       sram_264_and00002
+    SLICE_X19Y23.CE      net (fanout=4)        3.268   sram_264_and0000
+    SLICE_X19Y23.CLK     Tceck                 0.555   sram_264_7
+                                                       sram_264_7
+    -------------------------------------------------  ---------------------------
+    Total                                     15.807ns (4.127ns logic, 11.680ns route)
+                                                       (26.1% logic, 73.9% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point sram_264_6 (SLICE_X19Y23.CE), 37 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     3.472ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               Q_FSM_FFd1 (FF)
+  Destination:          sram_264_6 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      16.487ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.041ns (0.078 - 0.119)
+  Source Clock:         clk_IBUF rising at 0.000ns
+  Destination Clock:    clk_IBUF rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: Q_FSM_FFd1 to sram_264_6
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X39Y42.XQ      Tcko                  0.591   Q_FSM_FFd1
+                                                       Q_FSM_FFd1
+    SLICE_X36Y49.G3      net (fanout=17)       1.564   Q_FSM_FFd1
+    SLICE_X36Y49.Y       Tilo                  0.759   N4
+                                                       sram_addr<2>1
+    SLICE_X34Y39.F3      net (fanout=516)      2.335   sram_addr<2>
+    SLICE_X34Y39.X       Tilo                  0.759   N6
+                                                       sram_104_and000011
+    SLICE_X18Y10.G2      net (fanout=8)        1.749   N6
+    SLICE_X18Y10.Y       Tilo                  0.759   sram_456_and0000
+                                                       sram_264_and000011
+    SLICE_X37Y45.F3      net (fanout=16)       3.444   N56
+    SLICE_X37Y45.X       Tilo                  0.704   sram_264_and0000
+                                                       sram_264_and00002
+    SLICE_X19Y23.CE      net (fanout=4)        3.268   sram_264_and0000
+    SLICE_X19Y23.CLK     Tceck                 0.555   sram_264_7
+                                                       sram_264_6
+    -------------------------------------------------  ---------------------------
+    Total                                     16.487ns (4.127ns logic, 12.360ns route)
+                                                       (25.0% logic, 75.0% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     3.849ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               Q_FSM_FFd1 (FF)
+  Destination:          sram_264_6 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      16.110ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.041ns (0.078 - 0.119)
+  Source Clock:         clk_IBUF rising at 0.000ns
+  Destination Clock:    clk_IBUF rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: Q_FSM_FFd1 to sram_264_6
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X39Y42.XQ      Tcko                  0.591   Q_FSM_FFd1
+                                                       Q_FSM_FFd1
+    SLICE_X34Y48.F2      net (fanout=17)       1.301   Q_FSM_FFd1
+    SLICE_X34Y48.X       Tilo                  0.759   Q_FSM_FFd2
+                                                       sram_addr<5>1
+    SLICE_X18Y10.G3      net (fanout=96)       4.729   sram_addr<5>
+    SLICE_X18Y10.Y       Tilo                  0.759   sram_456_and0000
+                                                       sram_264_and000011
+    SLICE_X37Y45.F3      net (fanout=16)       3.444   N56
+    SLICE_X37Y45.X       Tilo                  0.704   sram_264_and0000
+                                                       sram_264_and00002
+    SLICE_X19Y23.CE      net (fanout=4)        3.268   sram_264_and0000
+    SLICE_X19Y23.CLK     Tceck                 0.555   sram_264_7
+                                                       sram_264_6
+    -------------------------------------------------  ---------------------------
+    Total                                     16.110ns (3.368ns logic, 12.742ns route)
+                                                       (20.9% logic, 79.1% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     4.152ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               sd_counter_2 (FF)
+  Destination:          sram_264_6 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      15.807ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.041ns (0.078 - 0.119)
+  Source Clock:         clk_IBUF rising at 0.000ns
+  Destination Clock:    clk_IBUF rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: sd_counter_2 to sram_264_6
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X39Y48.XQ      Tcko                  0.591   sd_counter<2>
+                                                       sd_counter_2
+    SLICE_X36Y49.G1      net (fanout=3)        0.884   sd_counter<2>
+    SLICE_X36Y49.Y       Tilo                  0.759   N4
+                                                       sram_addr<2>1
+    SLICE_X34Y39.F3      net (fanout=516)      2.335   sram_addr<2>
+    SLICE_X34Y39.X       Tilo                  0.759   N6
+                                                       sram_104_and000011
+    SLICE_X18Y10.G2      net (fanout=8)        1.749   N6
+    SLICE_X18Y10.Y       Tilo                  0.759   sram_456_and0000
+                                                       sram_264_and000011
+    SLICE_X37Y45.F3      net (fanout=16)       3.444   N56
+    SLICE_X37Y45.X       Tilo                  0.704   sram_264_and0000
+                                                       sram_264_and00002
+    SLICE_X19Y23.CE      net (fanout=4)        3.268   sram_264_and0000
+    SLICE_X19Y23.CLK     Tceck                 0.555   sram_264_7
+                                                       sram_264_6
+    -------------------------------------------------  ---------------------------
+    Total                                     15.807ns (4.127ns logic, 11.680ns route)
+                                                       (26.1% logic, 73.9% route)
+
+--------------------------------------------------------------------------------
+
+Hold Paths: TS_clk = PERIOD TIMEGRP "clk" 20 ns HIGH 40%;
+--------------------------------------------------------------------------------
+
+Paths for end point sd_card0/block_address_reg_9 (SLICE_X30Y79.BX), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.743ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               rd_addr_9 (FF)
+  Destination:          sd_card0/block_address_reg_9 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      3.731ns (Levels of Logic = 0)
+  Clock Path Skew:      2.988ns (4.641 - 1.653)
+  Source Clock:         clk_IBUF rising at 20.000ns
+  Destination Clock:    clk_sel rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path: rd_addr_9 to sd_card0/block_address_reg_9
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X44Y79.XQ      Tcko                  0.474   rd_addr<9>
+                                                       rd_addr_9
+    SLICE_X30Y79.BX      net (fanout=3)        3.123   rd_addr<9>
+    SLICE_X30Y79.CLK     Tckdi       (-Th)    -0.134   sd_card0/block_address_reg<9>
+                                                       sd_card0/block_address_reg_9
+    -------------------------------------------------  ---------------------------
+    Total                                      3.731ns (0.608ns logic, 3.123ns route)
+                                                       (16.3% logic, 83.7% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point sd_card0/block_address_reg_23 (SLICE_X49Y86.BX), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.957ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               rd_addr_23 (FF)
+  Destination:          sd_card0/block_address_reg_23 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      3.920ns (Levels of Logic = 0)
+  Clock Path Skew:      2.963ns (4.621 - 1.658)
+  Source Clock:         clk_IBUF rising at 20.000ns
+  Destination Clock:    clk_sel rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path: rd_addr_23 to sd_card0/block_address_reg_23
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X46Y87.XQ      Tcko                  0.474   rd_addr<23>
+                                                       rd_addr_23
+    SLICE_X49Y86.BX      net (fanout=3)        3.353   rd_addr<23>
+    SLICE_X49Y86.CLK     Tckdi       (-Th)    -0.093   sd_card0/block_address_reg<23>
+                                                       sd_card0/block_address_reg_23
+    -------------------------------------------------  ---------------------------
+    Total                                      3.920ns (0.567ns logic, 3.353ns route)
+                                                       (14.5% logic, 85.5% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point sd_card0/dout_7 (SLICE_X21Y90.BX), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.968ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               sd_card0/recv_data_6 (FF)
+  Destination:          sd_card0/dout_7 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.970ns (Levels of Logic = 0)
+  Clock Path Skew:      0.002ns (0.018 - 0.016)
+  Source Clock:         clk_sel rising at 20.000ns
+  Destination Clock:    clk_sel rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path: sd_card0/recv_data_6 to sd_card0/dout_7
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X21Y88.XQ      Tcko                  0.473   sd_card0/recv_data<6>
+                                                       sd_card0/recv_data_6
+    SLICE_X21Y90.BX      net (fanout=2)        0.404   sd_card0/recv_data<6>
+    SLICE_X21Y90.CLK     Tckdi       (-Th)    -0.093   sd_card0/dout<7>
+                                                       sd_card0/dout_7
+    -------------------------------------------------  ---------------------------
+    Total                                      0.970ns (0.566ns logic, 0.404ns route)
+                                                       (58.4% logic, 41.6% route)
+
+--------------------------------------------------------------------------------
+
+Component Switching Limit Checks: TS_clk = PERIOD TIMEGRP "clk" 20 ns HIGH 40%;
+--------------------------------------------------------------------------------
+Slack: 17.935ns (period - (min high pulse limit / (high pulse / period)))
+  Period: 20.000ns
+  High pulse: 8.000ns
+  High pulse limit: 0.826ns (Tch)
+  Physical resource: sram_507_3/CLK
+  Logical resource: sram_507_3/CK
+  Location pin: SLICE_X20Y70.CLK
+  Clock network: clk_IBUF
+--------------------------------------------------------------------------------
+Slack: 17.935ns (period - (min high pulse limit / (high pulse / period)))
+  Period: 20.000ns
+  High pulse: 8.000ns
+  High pulse limit: 0.826ns (Tch)
+  Physical resource: sram_507_3/CLK
+  Logical resource: sram_507_2/CK
+  Location pin: SLICE_X20Y70.CLK
+  Clock network: clk_IBUF
+--------------------------------------------------------------------------------
+Slack: 17.935ns (period - (min high pulse limit / (high pulse / period)))
+  Period: 20.000ns
+  High pulse: 8.000ns
+  High pulse limit: 0.826ns (Tch)
+  Physical resource: sram_187_5/CLK
+  Logical resource: sram_187_5/CK
+  Location pin: SLICE_X46Y2.CLK
+  Clock network: clk_IBUF
+--------------------------------------------------------------------------------
+
+
+All constraints were met.
+
+
+Data Sheet report:
+-----------------
+All values displayed in nanoseconds (ns)
+
+Clock to Setup on destination clock clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |   16.885|         |         |         |
+---------------+---------+---------+---------+---------+
+
+
+Timing summary:
+---------------
+
+Timing errors: 0  Score: 0  (Setup/Max: 0, Hold: 0)
+
+Constraints cover 186618 paths, 0 nets, and 22500 connections
+
+Design statistics:
+   Minimum period:  16.885ns{1}   (Maximum frequency:  59.224MHz)
+
+
+------------------------------------Footnotes-----------------------------------
+1)  The minimum period statistic assumes all single cycle delays.
+
+Analysis completed Mon Nov 23 16:48:09 2015 
+--------------------------------------------------------------------------------
+
+Trace Settings:
+-------------------------
+Trace Settings 
+
+Peak Memory Usage: 253 MB
+
+
+
